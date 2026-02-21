@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Rahul Patil",
+      "email": "rahul@gmail.com",
+      "contact": "9876543210",
+      "password": "Rahul@123",
+      "role": "member",
+      "membershipId": 1,
+      "trainer": "Meera",
+      "attendance": "82%",
+      "activityStatus": "Active",
+      "notes": "Improving strength and stamina.",
+      "dob": "1990-05-15",
+      "gender": "Male",
+      "address": "Mumbai",
+      "height": "175",
+      "weight": "75",
+      "bodyFat": "",
+      "fitnessGoal": "Muscle gain",
+      "gymExperience": "Intermediate",
+      "dietPlanOpted": false,
+      "dietPreference": "",
+      "dietaryRestrictions": "",
+      "preferredMealTimes": "",
+      "otp": null,
+      "otpExpiry": null,
+      "attendanceToday": false,
+      "checkinTime": null,
+      "checkoutTime": null,
+      "lastAttendanceDate": null
+    },
+    {
+      "id": "2",
+      "name": "Aayushi Dhawas",
+      "email": "aayushi@gmail.com",
+      "contact": "7656491083",
+      "password": "Rahul@123",
+      "role": "member",
+      "membershipId": 2,
+      "trainer": "Priya",
+      "attendance": "74%",
+      "activityStatus": "Training",
+      "notes": "Focus on upper body strength.",
+      "dob": "2003-06-15",
+      "gender": "Female",
+      "address": "Pune",
+      "height": "165",
+      "weight": "58",
+      "bodyFat": "",
+      "fitnessGoal": "Strength",
+      "gymExperience": "Beginner",
+      "dietPlanOpted": true,
+      "dietPreference": "Vegetarian",
+      "dietaryRestrictions": "No gluten",
+      "preferredMealTimes": "Breakfast 8AM, Lunch 1PM",
+      "otp": null,
+      "otpExpiry": null,
+      "attendanceToday": false,
+      "checkinTime": null,
+      "checkoutTime": null,
+      "lastAttendanceDate": null
+    },
+    {
+      "id": "100",
+      "name": "Gym Admin",
+      "email": "admin@gym.com",
+      "contact": "9999999999",
+      "password": "Admin@123",
+      "role": "admin",
+      "otp": null,
+      "otpExpiry": null
+    }
+  ],
+  "memberships": [
+    {
+      "id": 1,
+      "name": "1 Month Membership",
+      "price": 1000,
+      "duration": 30
+    },
+    {
+      "id": 2,
+      "name": "2 Month Membership",
+      "price": 1600,
+      "duration": 60
+    }
+  ]
+}
