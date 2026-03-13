@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AdminDashboard.css";
+import MemberReports from "./MemberReports";  
 const USERS_API = "http://localhost:3001/users";
 const MEMBERSHIP_API = "http://localhost:3001/memberships";
 
@@ -83,7 +84,7 @@ const handleAddMember = async (e) => {
   const newMemberData = {
     name: newMember.name,
     email: newMember.email,
-    contact: newMember.mobile,
+    phone: newMember.mobile,
     password: "Member@123",
     role: "member",
     membership: newMember.membership,
@@ -130,6 +131,9 @@ const handleAddMember = async (e) => {
   setShowAddMembershipModal(false);
   showToast(`✅ Plan added successfully!`);
 };
+// Add this after your existing state declarations
+const [activePage, setActivePage] = useState('members');  // Track active page
+
 
 
   return (
@@ -152,22 +156,27 @@ const handleAddMember = async (e) => {
           </div>
 
           <div className="sidebar-nav">
-            <button className="nav-item">
-              <span>📊</span> Dashboard
-            </button>
-            <button className="nav-item nav-item active">
-              <span>👥</span> Members
-            </button>
-            <button className="nav-item">
-              <span>🏋️</span> Workouts
-            </button>
-            <button className="nav-item">
-              <span>💰</span> Payments
-            </button>
-            <button className="nav-item">
-              <span>📈</span> Reports
-            </button>
-          </div>
+  <button 
+    className={`nav-item ${activePage === 'dashboard' ? 'active' : ''}`}
+    onClick={() => setActivePage('dashboard')}
+  >
+    <span>📊</span> Dashboard
+  </button>
+  <button 
+    className={`nav-item ${activePage === 'members' ? 'active' : ''}`}
+    onClick={() => setActivePage('members')}
+  >
+    <span>👥</span> Members
+  </button>
+  <button 
+    className={`nav-item ${activePage === 'member-reports' ? 'active' : ''}`}
+    onClick={() => setActivePage('member-reports')}  // ✅ Navigate to Reports
+  >
+    <span>📈</span> Member Monthly Reports
+  </button>
+  
+</div>
+
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -182,97 +191,123 @@ const handleAddMember = async (e) => {
         )}
 
         {/* Main Content */}
-        <main className="admin-main-content">
-          <header className="admin-header">
-            <div className="admin-header-left">
-              <h1 className="admin-title">Member Management</h1>
-              <p className="admin-subtitle">Manage your gym members efficiently</p>
-            </div>
-            <div className="admin-header-right">
-              <button className="back-dashboard-btn">
-                <span>←</span> Quick Stats
-              </button>
-            </div>
-          </header>
+       <main className="admin-main-content">
+  <header className="admin-header">
+    <div className="admin-header-left">
+      <h1 className="admin-title">
+        {activePage === 'members' ? 'Member Management' : 
+         activePage === 'member-reports' ? 'Member Monthly Reports' : 
+         'Dashboard'}
+      </h1>
+      <p className="admin-subtitle">
+        {activePage === 'members' ? 'Manage your gym members efficiently' :
+         activePage === 'member-reports' ? 'View detailed monthly reports' :
+         'Quick overview of gym statistics'}
+      </p>
+    </div>
+    <div className="admin-header-right">
+      <button className="back-dashboard-btn">
+        <span>←</span> Quick Stats
+      </button>
+    </div>
+  </header>
 
-          {/* Stats & Search Section */}
-          <div className="admin-stats-section">
-            <div className="members-count">
-              <h2>Total Members: {filteredMembers.length}</h2>
-              <span className="memberships-count">{memberships.length} Plans Available</span>
-            </div>
-            <div className="search-wrapper">
-              <div className="search-container">
-                <span className="search-icon">🔍</span>
-                <input
-                  type="text"
-                  className="search-input"
-                  placeholder="Search by name or mobile..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-            </div>
+  {/* Conditional Content Rendering */}
+  {activePage === 'members' && (
+    <>
+      {/* Stats & Search Section */}
+      <div className="admin-stats-section">
+        <div className="members-count">
+          <h2>Total Members: {filteredMembers.length}</h2>
+          <span className="memberships-count">{memberships.length} Plans Available</span>
+        </div>
+        <div className="search-wrapper">
+          <div className="search-container">
+            <span className="search-icon">🔍</span>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search by name or mobile..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
+        </div>
+      </div>
 
-          {/* Action Buttons - Clean & Simple */}
-          <div className="action-buttons">
-            <button 
-              className="add-button primary" 
-              onClick={() => setShowAddMemberModal(true)}
-            >
-              ➕ Add New Member
-            </button>
-            <button 
-              className="add-button primary" 
-              onClick={() => setShowAddMembershipModal(true)}
-            >
-              📋 Add Membership Plan
-            </button>
-          </div>
+      {/* Action Buttons */}
+      <div className="action-buttons">
+        <button 
+          className="add-button primary" 
+          onClick={() => setShowAddMemberModal(true)}
+        >
+          ➕ Add New Member
+        </button>
+        <button 
+          className="add-button primary" 
+          onClick={() => setShowAddMembershipModal(true)}
+        >
+          📋 Add Membership Plan
+        </button>
+      </div>
 
-          {/* Members Grid - Full Focus */}
-          <section className="members-grid">
-            {filteredMembers.length > 0 ? (
-              filteredMembers.map((member) => (
-                <article key={member.id} className="member-card">
-                  <div className="card-header">
-                    <div className={`status-indicator ${member.status}`}></div>
-                    <div className="card-gradient">
-                      <h3 className="card-name">{member.name}</h3>
-                      <p className="card-phone">{member.phone}</p>
-                      {member.email && <p className="card-phone secondary">{member.email}</p>}
-                      {member.membership && (
-                        <p className="card-bill">{member.membership}</p>
-                      )}
-                    </div>
-                  </div>
-                  <div className="card-body">
-                    <div className="member-avatar">👤</div>
-                    <div className="card-footer-info">
-                      <h4 className="footer-name">{member.name}</h4>
-                      <p className="footer-phone">{member.phone}</p>
-                      {member.status === 'active' ? (
-                        <p className="status-text active">Active Member</p>
-                      ) : (
-                        <p className="status-text inactive">Inactive Member</p>
-                      )}
-                    </div>
-                  </div>
-                </article>
-              ))
-            ) : (
-              <div className="empty-state">
-                <div className="empty-icon">👥</div>
-                <h3>No Members Found</h3>
-                <p>{searchTerm ? 'Try adjusting your search terms' : 'Get started by adding your first member'}</p>
-                <button className="add-button primary" onClick={() => setShowAddMemberModal(true)}>
-                  ➕ Add First Member
-                </button>
-              </div>
+      {/* Members Grid */}
+      {/* Members Grid - Full Focus */}
+      <section className="members-grid">
+  {filteredMembers.length > 0 ? (
+    filteredMembers.map((member) => (
+      <article key={member.id} className="member-card">
+        <div className="card-header">
+          <div className={`status-indicator ${member.status}`}></div>
+          <div className="card-gradient">
+            <h3 className="card-name">{member.name}</h3>
+            <p className="card-phone">{member.phone}</p>
+            {member.email && <p className="card-phone secondary">{member.email}</p>}
+            {member.membership && (
+              <p className="card-bill">{member.membership}</p>
             )}
-          </section>
-        </main>
+          </div>
+        </div>
+        <div className="card-body">
+          <div className="member-avatar">👤</div>
+          <div className="card-footer-info">
+            <h4 className="footer-name">{member.name}</h4>
+            <p className="footer-phone">{member.phone}</p>
+            {member.status === 'active' ? (
+              <p className="status-text active">Active Member</p>
+            ) : (
+              <p className="status-text inactive">Inactive Member</p>
+            )}
+          </div>
+        </div>
+      </article>
+    ))
+  ) : (
+    <div className="empty-state">
+      <div className="empty-icon">👥</div>
+      <h3>No Members Found</h3>
+      <p>{searchTerm ? 'Try adjusting your search terms' : 'Get started by adding your first member'}</p>
+      <button className="add-button primary" onClick={() => setShowAddMemberModal(true)}>
+        ➕ Add First Member
+      </button>
+    </div>
+  )}
+    </section>
+
+    </>
+  )}
+
+  {activePage === 'member-reports' && (
+    <MemberReports />
+  )}
+
+  {activePage === 'dashboard' && (
+    <div className="dashboard-placeholder">
+      <h2>📊 Dashboard Content</h2>
+      <p>Dashboard features coming soon...</p>
+    </div>
+  )}
+</main>
 
         {/* Add Member Modal */}
         {showAddMemberModal && (

@@ -102,22 +102,17 @@
 .bulk-btn.checkout { background: #ef4444; color: white; }
 
 /* Table */
+/* WHITE TABLE CONTAINER */
 .table-container {
-  background: rgba(255,255,255,0.95);
+  background: #ffffff !important;  /* Pure white */
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(62,9,148,0.15);
-  border: 1px solid rgba(62,9,148,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);  /* Subtle shadow */
+  border: 1px solid rgba(62,9,148,0.1);  /* Very light purple border */
 }
-
-.attendance-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
 .attendance-table th {
-  background: linear-gradient(135deg, #3e0994 0%, #98cfff 100%);
-  color: white;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%) !important;
+  color: white !important;
   padding: 1.2rem 1rem;
   text-align: left;
   font-weight: 600;
@@ -126,19 +121,24 @@
   letter-spacing: 0.5px;
 }
 
+
+/* WHITE TABLE ROWS */
 .attendance-table td {
   padding: 1.2rem 1rem;
-  border-bottom: 1px solid rgba(62,9,148,0.1);
-  color: #3e0994;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);  /* Very light gray */
+  background: #ffffff !important;  /* Pure white cells */
+  color: #1e293b !important;  /* Dark text for contrast */
 }
 
 .attendance-table tr:hover {
-  background: rgba(62,9,148,0.05);
+  background: rgba(62,9,148,0.03) !important;  /* Very subtle purple hover */
 }
 
+/* WHITE PRESENT ROW */
 .present-row {
-  background: rgba(34,197,94,0.08);
+  background: rgba(34,197,94,0.04) !important;  /* Almost white with tiny green tint */
 }
+
 
 /* Status & Type Badges */
 .status-badge, .type-badge {
