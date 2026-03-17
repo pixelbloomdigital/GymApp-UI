@@ -1,0 +1,340 @@
+.membership-purchase-container {
+  display: flex;
+  min-height: 100vh;
+  background: #e8eaf6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.membership-page {
+  padding: 2rem;
+  width: 100%;
+}
+.membership-header {
+  margin-bottom: 1.5rem;
+}
+
+.member-info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.member-info-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+}
+
+.member-info-left {
+  flex-shrink: 0;
+}
+
+.member-info-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+}
+
+.member-info-right h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.member-info-right p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.member-info-right i {
+  width: 16px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title h2 {
+  font-size: 1.8rem;
+  color: #5e35b1;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.page-title p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  animation: slideDown 0.3s ease;
+}
+
+.success-message i {
+  font-size: 1.3rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.plan-card {
+  border-radius: 20px;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.plan-card.hovered {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.circle-top-right {
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+}
+
+.circle-bottom-left {
+  bottom: -40px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.plan-content {
+  padding: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.plan-badge {
+  display: inline-block;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-icon {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.plan-icon i {
+  font-size: 1.8rem;
+  opacity: 0.9;
+}
+
+.plan-name {
+  font-size: 1.3rem;
+  margin: 0 0 0.3rem;
+  font-weight: 700;
+}
+
+.plan-duration {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.plan-price {
+  margin: 1.2rem 0;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price-amount {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.price-period {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-left: 4px;
+}
+
+.plan-features {
+  margin-bottom: 1.2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.92;
+}
+
+.feature-icon {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon i {
+  font-size: 0.65rem;
+}
+
+.enrollment-count {
+  font-size: 0.78rem;
+  opacity: 0.65;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.enrollment-count i {
+  margin-right: 5px;
+}
+
+.purchase-btn {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.purchase-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.purchase-btn i {
+  font-size: 0.9rem;
+}
+
+.back-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(66, 165, 245, 0.3);
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(66, 165, 245, 0.4);
+}
+
+@media (max-width: 1200px) {
+  .plans-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .membership-page {
+    padding: 1rem;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .member-info-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .plan-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-content {
+    padding: 1.5rem;
+  }
+
+  .price-amount {
+    font-size: 2.2rem;
+  }
+
+  .plan-name {
+    font-size: 1.2rem;
+  }
+}

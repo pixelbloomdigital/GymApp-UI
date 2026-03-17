@@ -1,0 +1,467 @@
+/* ==========================================
+   ANNOUNCEMENT ADMIN PAGE STYLES
+   ========================================== */
+
+.announcement-page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Announcement Header */
+.announcement-header {
+  margin-bottom: 30px;
+}
+
+.announcement-header h1 {
+  font-size: 32px;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+}
+
+.announcement-header h1 i {
+  color: #667eea;
+  font-size: 28px;
+}
+
+/* Announcement Actions */
+.announcement-actions {
+  margin-bottom: 20px;
+}
+
+.manage-announcement-btn {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+}
+
+.manage-announcement-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 101, 101, 0.4);
+}
+
+/* Announcement Form Card */
+.announcement-form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.announcement-form-card h3 {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.announcement-form-card h3 i {
+  color: #667eea;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-group input[type="date"] {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="date"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.publish-btn {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.publish-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+}
+
+/* Announcement Table Card */
+.announcement-table-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-table-card h3 {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.announcement-table-card h3 i {
+  color: #667eea;
+}
+
+/* Announcement Table */
+.announcement-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.announcement-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.announcement-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.announcement-table th:first-child {
+  border-top-left-radius: 8px;
+  width: 60px;
+  text-align: center;
+}
+
+.announcement-table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.announcement-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.announcement-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.announcement-table td {
+  padding: 16px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.announcement-table td:first-child {
+  text-align: center;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.message-cell {
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* Status Toggle Button */
+.status-toggle {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.status-toggle.published {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-toggle.published:hover {
+  background: #a7f3d0;
+}
+
+.status-toggle.draft {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-toggle.draft:hover {
+  background: #fde68a;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: #fee2e2;
+  color: #991b1b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   ANNOUNCEMENT BANNER (USER SITE) STYLES
+   ========================================== */
+
+.announcement-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.announcement-banner-content {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  gap: 15px;
+}
+
+.announcement-icon {
+  font-size: 24px;
+  color: #fbbf24;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.announcement-text-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 28px;
+}
+
+.announcement-text {
+  animation: slideInRight 0.5s ease;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.announcement-text strong {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.announcement-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.announcement-counter {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .announcement-table {
+    font-size: 13px;
+  }
+
+  .announcement-table th,
+  .announcement-table td {
+    padding: 12px;
+  }
+
+  .message-cell {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcement-page {
+    padding: 15px;
+  }
+
+  .announcement-header h1 {
+    font-size: 24px;
+  }
+
+  .announcement-form-card,
+  .announcement-table-card {
+    padding: 20px;
+  }
+
+  /* Make table scrollable on mobile */
+  .announcement-table-card {
+    overflow-x: auto;
+  }
+
+  .announcement-table {
+    min-width: 700px;
+  }
+
+  .announcement-banner-content {
+    padding: 10px 15px;
+  }
+
+  .announcement-text {
+    font-size: 14px;
+  }
+
+  .announcement-icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manage-announcement-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .announcement-form-card h3 {
+    font-size: 18px;
+  }
+
+  .announcement-nav {
+    gap: 5px;
+  }
+
+  .nav-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .announcement-counter {
+    font-size: 12px;
+    min-width: 45px;
+  }
+}
