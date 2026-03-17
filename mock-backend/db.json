@@ -4,17 +4,17 @@
       "id": "1",
       "name": "Rahul Sharma",
       "email": "rahul@gmail.com",
-      "contact": "7656491083",
+      "contact": "+91 7656491083",
       "password": "Rahul@123",
       "dob": "1998-03-12",
       "role": "member",
       "membershipId": "1",
       "trainer": "Priya",
-      "membershipStatus": "Expired",
+      "membershipStatus": "Active",
       "joinDate": "2026-02-01",
       "expiryDate": "2026-04-01",
-      "attendance": "74%",
-      "totalAttendanceDays": 15,
+      "attendance": "60%",
+      "totalAttendanceDays": 18,
       "totalPossibleDays": 20,
       "currentWeight": 58,
       "targetWeight": 55,
@@ -22,23 +22,27 @@
       "gender": "Male",
       "bodyFat": "22%",
       "fitnessGoal": "Muscle Gain",
-      "notes": "Muscle gain focus. Strength training 4x/week. Cardio 2x/week."
+      "notes": "Muscle gain focus. Strength training 4x/week. Cardio 2x/week.",
+      "lastCheckin": "15 Mar, 03:09 pm",
+      "lastCheckout": "15 Mar, 03:09 pm",
+      "todayCheckedIn": false,
+      "checkinHistory": []
     },
     {
       "id": "2",
       "name": "Aayushi Dhawas",
       "email": "aayushi@gmail.com",
-      "contact": "7656491083",
+      "contact": "+91 7656491084",
       "password": "Rahul@123",
       "dob": "1998-03-12",
       "role": "member",
       "membershipId": "2",
       "trainer": "Priya",
-      "membershipStatus": "Expired",
+      "membershipStatus": "Active",
       "joinDate": "2026-02-01",
       "expiryDate": "2026-04-01",
-      "attendance": "74%",
-      "totalAttendanceDays": 15,
+      "attendance": "60%",
+      "totalAttendanceDays": 18,
       "totalPossibleDays": 20,
       "currentWeight": 58,
       "targetWeight": 55,
@@ -47,11 +51,12 @@
       "bodyFat": "22%",
       "fitnessGoal": "Strength",
       "notes": "Focus on upper body strength.",
-      "otp": "348124",
-      "otpExpiry": 1772887496113,
-      "dietPreference": "Vegan",
-      "dietTarget": "Strength 6 months",
-      "dietPlanOpted": true
+      "lastCheckin": "15 Mar, 03:09 pm",
+      "lastCheckout": "15 Mar, 03:09 pm",
+      "todayCheckedIn": false,
+      "checkinHistory": [],
+      "otp": null,
+      "otpExpiry": null
     },
     {
       "id": "100",
@@ -141,6 +146,100 @@
       "squatCurrent": "31kg",
       "paymentStatus": "Pending",
       "paymentAmount": 1600
+    }
+  ],
+  "dailyAttendance": [
+    {
+      "id": "9103",
+      "userId": "1",
+      "date": "2026-03-15",
+      "status": "present",
+      "checkinTime": "15 Mar, 03:14 pm",
+      "checkoutTime": null
+    },
+    {
+      "id": "4cf5",
+      "userId": "2",
+      "date": "2026-03-15",
+      "status": "present",
+      "checkinTime": "15 Mar, 03:14 pm",
+      "checkoutTime": null
+    },
+    {
+      "id": "162d",
+      "userId": "1",
+      "date": "2026-03-17",
+      "status": "present",
+      "checkinTime": "17 Mar, 11:06 am",
+      "checkoutTime": null
+    },
+    {
+      "id": "50dd",
+      "userId": "2",
+      "date": "2026-03-17",
+      "status": "present",
+      "checkinTime": "17 Mar, 11:06 am",
+      "checkoutTime": null
+    }
+  ],
+  "dietPlans": [
+    {
+      "id": "muscle1",
+      "goal": "Muscle Gain",
+      "title": "Muscle Building Plan",
+      "duration": 30,
+      "dailyCalories": 2800,
+      "macros": {
+        "protein": "40%",
+        "carbs": "40%",
+        "fat": "20%"
+      },
+      "meals": [
+        {
+          "meal": "Breakfast",
+          "items": [
+            "6 egg whites + 2 yolks",
+            "100g oats",
+            "1 banana"
+          ],
+          "calories": 650,
+          "protein": "45g"
+        },
+        {
+          "meal": "Lunch",
+          "items": [
+            "200g chicken breast",
+            "150g brown rice",
+            "200g broccoli"
+          ],
+          "calories": 750,
+          "protein": "60g"
+        }
+      ]
+    },
+    {
+      "id": "strength1",
+      "goal": "Strength",
+      "title": "Strength Power Plan",
+      "duration": 30,
+      "dailyCalories": 2600,
+      "macros": {
+        "protein": "45%",
+        "carbs": "35%",
+        "fat": "20%"
+      },
+      "meals": [
+        {
+          "meal": "Breakfast",
+          "items": [
+            "4 eggs",
+            "120g oats",
+            "30g almonds"
+          ],
+          "calories": 700,
+          "protein": "40g"
+        }
+      ]
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

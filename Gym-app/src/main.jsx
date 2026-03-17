@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   { path: "/forgot-password", element: <ForgotPassword /> },
   { path: "/ForgotPassword", element: <ForgotPassword /> },
   { path: "/admin-dashboard", element: <AdminDashboard /> },  // ← ADD THIS LINE
-  { path: "/edit-profile/:memberId", element: <EditProfile /> },
+  { path: "/edit-profile/:memberId", element: <EditProfile userId={1} /> },
   { path: "/member-dashboard/:memberId", element: <MemberDashboard />}, // ← ADD THIS LINE
   { path: "/members", element: <Members /> }, // ← ADD THIS LINE
   { path: "/attendance-list", element: <AttendanceList /> },  // ← ADD THIS LINE
