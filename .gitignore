@@ -1,0 +1,43 @@
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Build outputs
+backend/*/target/
+frontend/dist/
+frontend/build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Secrets — NEVER commit these
+backend/gymApp-auth-login-service/src/main/resources/application-secrets.properties
+application-local.properties
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+desktop.ini
+Thumbs.db
+
+# Large files
+*.zip
+*.mp4
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+
+# Java
+*.class
+*.jar
+*.war
+
+# Env files
+.env
+.env.local
+.env.production
